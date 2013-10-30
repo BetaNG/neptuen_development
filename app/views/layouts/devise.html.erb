@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Neptuen</title>
+  <meta name="description" content="One World One BetaNG">
+  <meta name="author" content="Mario Ozawa">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+  <!-- Icons -->
+  <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="apple-touch-icon" href="img/icon57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="img/icon72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="img/icon76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="img/icon114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="img/icon120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="img/icon144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="img/icon152.png" sizes="152x152">
+  <!-- END Icons -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,700,700italic">
+  <%= stylesheet_link_tag "application" %>
+  <%= csrf_meta_tag %>
+  <!-- END Stylesheets -->
+  <!-- Modernizr (Browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it) -->
+  <%= javascript_include_tag "vendor/modernizr-2.6.2-respond-1.1.0.min" %>
+</head>
+<!-- Body -->
+<body class="login">
+  <a href="javascript:void(0)" class="login-btn themed-background-default">
+    <span class="login-logo">
+      <span class="square1 themed-border-default"></span>
+      <span class="square2"></span>
+      <span class="name">FlatApp</span>
+    </span>
+  </a>
+  <div class="left-door"></div>
+  <div class="right-door"></div>
+  <div id="login-container" class="display-none">
+    <div class="block-tabs block-themed">
+      <ul id="login-tabs" class="nav nav-tabs" data-toggle="tabs">
+        <li class="active text-center">
+          <a href="#login-form-tab">
+            <i class="icon-user"></i> 登录
+          </a>
+        </li>
+        <li class="text-center">
+          <a href="#register-form-tab">
+            <i class="icon-plus"></i> 注册
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="login-form-tab">
+          <div id="login-buttons">
+            <button id="login-btn-facebook" class="btn btn-lg btn-primary"><i class="icon-facebook"></i> Facebook</button>
+            <button id="login-btn-twitter" class="btn btn-lg btn-info"><i class="icon-twitter"></i> Twitter</button>
+          </div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| %>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="icon-envelope-alt icon-fixed-width"></i></span>
+                  <%= f.text_field :login, autofocus: true, class: "form-control", placeholder: "用户名或者邮箱..." %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="icon-asterisk icon-fixed-width"></i></span>
+                  <%= f.password_field :password, class: "form-control", placeholder: "密码..." %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12 clearfix">
+                <div class="pull-right">
+                  <button type="submit" class="btn btn-success remove-margin">登入</button>
+                </div>
+                <div class="pull-left login-extra-check">
+                  <label for="login-remember-me">
+                    仅当日有效
+                  </label>
+                </div>
+              </div>
+            </div>
+          <%- end %>
+        </div>
+        <div class="tab-pane" id="register-form-tab">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form-horizontal") do |f| %>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="icon-user icon-fixed-width"></i></span>
+                  <%= f.text_field :username, class: "form-control", placeholder: "用户名..." %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="icon-envelope-alt icon-fixed-width"></i></span>
+                  <%= f.email_field :email, class: "form-control", placeholder: "邮箱..." %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="icon-asterisk icon-fixed-width"></i></span>
+                  <%= f.password_field :password, class: "form-control", placeholder: "密码..." %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="icon-asterisk icon-fixed-width"></i></span>
+                  <%= f.password_field :password_confirmation, class: "form-control", placeholder: "确认密码..." %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12 clearfix">
+                <div class="pull-right">
+                  <button type="submit" class="btn btn-success remove-margin">Register</button>
+                </div>
+              </div>
+            </div>
+          <%- end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--[if lte IE 8]><script src="js/helpers/excanvas.min.js"></script><![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <%= javascript_include_tag "application" %>
+    <script>$(function(){if(!$("body").hasClass("no-animation")){var e=0;$("html").hasClass("csstransitions")&&(e=750),$(".login-btn").mouseenter(function(){$(".left-door, .right-door, .login-btn").addClass("login-animate"),setTimeout(function(){$("#login-container").fadeIn(1500),$(".login-btn .name").fadeOut(250,function(){$(".login-btn .square1, .login-btn .square2").fadeIn(750),$("#login-email").focus()})},e)})}});</script>
+</body>
+</html>

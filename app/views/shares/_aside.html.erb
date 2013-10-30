@@ -1,0 +1,264 @@
+<aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+            <div class="side-scrollable">
+                <div class="mini-profile">
+                    <div class="mini-profile-options">
+                        <a href="javascript:void(0)" class="badge badge-info loading-on" data-toggle="tooltip" data-placement="right" title="Refresh">
+                            <i class="icon-refresh"></i>
+                        </a>
+                        <a href="page_ready_shopping_cart.php" class="badge badge-warning" data-toggle="tooltip" data-placement="right" title="6 Products">
+                            <i class="glyphicon-shopping_cart"></i>
+                        </a>
+                        <a href="<%= edit_user_registration_path %>" class="badge badge-success enable-tooltip" role="button" data-toggle="modal" data-placement="right" title="Settings">
+                            <i class="glyphicon-cogwheel"></i>
+                        </a>
+                        <a href="<%= destroy_user_session_url %>" class="badge badge-danger" data-toggle="tooltip" data-placement="right" title="Log out">
+                            <i class="icon-signout"></i>
+                        </a>
+                    </div>
+                    <a href="page_ready_user_profile.php">
+                        <%= image_tag "template/avatar2.jpg", alt: "Avatar", class: "img-circle" %>
+                    </a>
+                </div>
+                <div class="sidebar-tabs-con">
+                    <ul class="sidebar-tabs" data-toggle="tabs">
+                        <li class="active">
+                            <a href="#side-tab-menu"><i class="glyphicon-list"></i></a>
+                        </li>
+                        <li>
+                            <a href="#side-tab-extra"><i class="glyphicon-charts"></i></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="side-tab-menu">
+                            <nav id="primary-nav">
+                                <ul>
+                                    <li>
+                                        <a href="index.php" class=" active"><i class="glyphicon-display"></i>Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link"><i class="glyphicon-vector_path_circle"></i>User Interface</a>
+                                        <ul>
+                                            <li>
+                                                <a href="page_ui_blocks.php">Blocks</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ui_grid.php">Grid</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ui_typography.php">Typography</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ui_navigation.php">Navigation</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ui_tabs_accordions.php">Tabs &amp; Accordions</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ui_buttons_dropdowns.php">Buttons &amp; Dropdowns</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ui_progress_bars.php">Progress Bars</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ui_carousel.php">Carousel</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ui_extras.php">Extras</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link"><i class="glyphicon-table"></i>Tables</a>
+                                        <ul>
+                                            <li>
+                                                <a href="page_tables_static.php">Static</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_tables_dynamic.php">Dynamic</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_tables_editable.php">Editable</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link"><i class="glyphicon-more_windows"></i>品种资料</a>
+                                        <ul>
+                                            <li>
+                                                <%= link_to "概况", products_url %>
+                                            </li>
+                                            <li>
+                                                <a href="page_forms_layouts_styles.php">Layouts &amp; Styles</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_forms_pickers_grid.php">Pickers &amp; Grid</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_forms_textareas_wysiwyg.php">Textareas &amp; WYSIWYG</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_forms_upload_dropzone.php">File Upload &amp; Dropzone</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_forms_validation.php">Validation</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_forms_wizard.php">Wizard</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link"><i class="glyphicon-fire"></i>Components</a>
+                                        <ul>
+                                            <li>
+                                                <a href="page_comp_inbox.php">Inbox</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_comp_chat.php">Chat</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_comp_timeline.php">Timeline</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_comp_tiles.php">Tiles</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_comp_gallery.php">Gallery</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_comp_charts.php">Charts</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_comp_calendar.php">Calendar</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="submenu-link">Maps</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="page_comp_vector_maps.php">Vector Maps</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="page_comp_google_maps.php">Google Maps</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="page_comp_syntax_highlighting.php">Syntax Highlighting</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link"><i class="glyphicon-pizza"></i>Icon Packs</a>
+                                        <ul>
+                                            <li>
+                                                <a href="page_icons_glyphicons_pro.php">Glyphicons Pro</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_icons_fontawesome.php">FontAwesome</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_icons_gemicon.php">Gemicon</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link"><i class="glyphicon-certificate"></i>Ready UI</a>
+                                        <ul>
+                                            <li>
+                                                <a href="page_ready_search_results.php">Search Results</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ready_user_profile.php">User Profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ready_pricing_tables.php">Pricing Tables</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="submenu-link">Forum</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="page_ready_forum_categories.php">Categories</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="page_ready_forum_topics.php">Topics</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="page_ready_forum_conversation.php">Conversation</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="submenu-link">e-Shop</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="page_ready_product.php">Product</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="page_ready_products_list.php">Products List</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="page_ready_shopping_cart.php">Shopping Cart</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="page_ready_invoice.php">Invoice</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ready_article.php">Article</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_ready_faq.php">FAQ</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="submenu-link">Errors</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="page_ready_errors.php">In-Page</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="page_ready_standalone_error.php">Standalone</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="page_ready_blank.php">Blank</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link"><i class="glyphicon-power"></i>Login Pages</a>
+                                        <ul>
+                                            <li>
+                                                <a href="page_login.php">Login with animation</a>
+                                            </li>
+                                            <li>
+                                                <a href="page_login_alt.php">Login without animation</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="page_landing.php"><i class="glyphicon-leaf"></i>Landing Page</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="tab-pane tab-pane-side" id="side-tab-extra">
+                            <h5><i class="icon-briefcase pull-right"></i><a href="javascript:void(0)" class="side-link">Balance</a></h5>
+                            <div>$25.230,00</div>
+                            <h5><i class="icon-dollar pull-right"></i><a href="javascript:void(0)" class="side-link">Earnings (today)</a></h5>
+                            <div>$1.752,00</div>
+                            <h5><i class="icon-shopping-cart pull-right"></i><a href="javascript:void(0)" class="side-link">Sales (today)</a></h5>
+                            <div>368</div>
+                            <h5><i class="icon-shopping-cart pull-right"></i><a href="javascript:void(0)" class="side-link">Sales (this month)</a></h5>
+                            <div class="text-success">+38%</div>
+                            <h5><i class="icon-ticket pull-right"></i><a href="javascript:void(0)" class="side-link">Open Tickets</a></h5>
+                            <div>23</div>
+                            <h5><i class="icon-bug pull-right"></i><a href="javascript:void(0)" class="side-link">Bugs to fix</a></h5>
+                            <div>2 important</div>
+                            <div>5 normal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>

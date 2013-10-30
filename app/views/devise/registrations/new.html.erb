@@ -1,0 +1,36 @@
+<div class="form-signin">
+	<h3>Create Account <span>Already a member? <%= link_to "用已有的账号登入", new_user_session_path %></span></h3>
+	<!-- Form -->
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		<!-- Row -->
+		<div class="row-fluid row-merge">	
+			<!-- Column -->
+			<div class="span6">
+				<div class="inner">
+					<%= f.label :username, "用户名:", :class => "strong" %>
+					<%= f.text_field :username, :autofocus => true, :class => "input-block-level", :placeholder => "输入您的用户名..." %>
+					<%= f.label :password, "密码:", :class => "strong" %>
+					<%= f.password_field :password, :autofocus => true, :class => "input-block-level", :placeholder => "输入密码..." %>
+					<%= f.label :password_confirmation, "重复密码:", :class => "strong" %>
+					<%= f.password_field :password_confirmation, :autofocus => true, :class => "input-block-level", :placeholder => "重复您的密码..." %>
+				</div>
+			</div>
+			<!-- // Column END -->
+			<!-- Column -->
+			<div class="span6">
+				<div class="inner">
+					<%= f.label :email, "您的邮箱:", :class => "strong" %>
+					<%= f.email_field :email, :autofocus => true, :class => "input-block-level", :placeholder => "输入您的常用邮箱..." %>
+					<%= f.label :realname, "您的姓名:", :class => "strong" %>
+					<%= f.text_field :realname, :autofocus => true, :class => "input-block-level", :placeholder => "输入您的真实姓名..." %>
+					<a href="#" class="btn btn-icon-stacked btn-block btn-success glyphicons user_add"><i></i><span>Create account and</span><span class="strong">Join MangoKIT now</span></a>
+					<p>Having troubles? <a href="faq.html?lang=en">Get Help</a></p>
+				</div>
+			</div>
+			<!-- // Column END -->	
+		</div>
+		<!-- // Row END -->		
+		<% end -%>
+	<!-- // Form END -->		
+	<div class="ribbon-wrapper"><div class="ribbon success">register</div></div>
+</div>

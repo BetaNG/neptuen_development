@@ -1,0 +1,130 @@
+<div class="heading-buttons">
+  <h3><%= @product[:name] %><span>  <%= @product[:factory] %></span></h3>
+  <div class="buttons pull-right">
+    <a href="<%= products_url %>" class="btn glyphicons btn-icon btn-default btn-small left_arrow"><i></i> 回到列表</a>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div class="separator bottom"></div>
+<div class="innerLR">
+  <!-- Product details -->
+  <div class="shop-client-products product-details">
+    <!-- Row -->
+    <div class="row-fluid">
+    
+      <!-- Product Gallery -->
+      <div class="span7" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
+        <a class="thumb" href="/assets/gallery-2/1.jpg" data-gallery="gallery"><img src="/assets/gallery-2/1.jpg" alt="photo" /></a>
+        <div class="separator bottom"></div>
+      </div>
+      <!-- // Product Gallery END -->
+      
+      <div class="span5">
+        <form class="margin-bottom-none form-horizontal">
+        
+          <!-- Price -->
+          <div class="box">
+            <div class="control-group">
+              <label class="control-label">中标价</label>
+              <div class="controls"><span class="price">￥<%= @product[:bid_price] %></span></div>
+              <label class="control-label">回款价</label>
+              <div class="controls"><span class="price">￥<%= @product[:final_price] %></span></div>
+              <div class="ribbon-wrapper"><div class="ribbon primary">价格</div></div>
+            </div>
+          </div>
+          <!-- // Price END -->
+          
+          <!-- Purchase Options -->
+          <div class="box">
+            <div class="control-group">
+              <label class="control-label">规格</label>
+              <div class="controls"><%= @product[:spec] %></div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">单位</label>
+              <div class="controls"><%= @product[:unit] %></div>
+            </div>
+          </div>
+          <!-- // Purchase Options END -->
+
+          <!-- Purchase Options -->
+          <div class="box">
+            <div class="control-group">
+              <label class="control-label">缩写</label>
+              <div class="controls"><%= @product[:shortname] %></div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">短位码</label>
+              <div class="controls"><%= @product[:shortcode] %></div>
+            </div>
+          </div>
+          <!-- // Purchase Options END -->
+          
+          <!-- Add to cart / Share -->
+          <div class="row-fluid">
+            <div class="span6"><a href="<%= edit_product_url(@product) %>" class="btn btn-icon glyphicons pencil btn-primary btn-block"><i></i>修改产品</a></div>
+            <div class="span6"><a href="<%= product_url(@product) %>" data-confirm = "Are you sure?", data-method = "delete" class="btn btn-icon glyphicons remove btn-primary btn-block"><i></i>删除产品</a></div>
+          </div>
+          <!-- // Add to cart / Share END -->
+          
+        </form>
+      </div>
+    </div>
+    <!-- // Row END -->
+    
+    <!-- Product description -->
+    <div class="box">
+      <h5>产品介绍</h5>
+      <%= sanitize @product[:intro] %>
+    </div>
+    <!-- // Product description END -->
+    
+  </div>
+  <div class="separator bottom"></div>
+  <!-- // Product details END -->
+  
+  <!-- Product reviews & delivery -->
+  <div class="widget widget-tabs widget-quick">
+  
+    <!-- Widget heading -->
+    <div class="widget-head">
+      <ul>
+        <li class="active"><a href="#reviewsTab" data-toggle="tab" class="glyphicons star"><i></i>Reviews</a></li>
+        <li><a href="#deliveryTab" data-toggle="tab" class="glyphicons car"><i></i>Delivery</a></li>
+      </ul>
+    </div>
+    <!-- // Widget heading END -->
+    
+    <div class="widget-body">
+      <div class="tab-content">
+      
+        <!-- Delivery Tab -->
+        <div class="tab-pane" id="deliveryTab">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis porta purus, pulvinar mattis nulla tempus ut. Curabitur quis dui orci. Ut nisi dolor, dignissim a aliquet quis, vulputate id dui. Proin ultrices ultrices ligula, dictum varius turpis faucibus non. Curabitur faucibus ultrices nunc, nec aliquet leo tempor cursus. Pellentesque sed felis ipsum. Quisque in lacus sed ante malesuada condimentum et a risus. Morbi accumsan euismod rutrum. Etiam vitae turpis eu est lacinia condimentum a sit amet erat. Sed augue turpis, lobortis ac feugiat eget, cursus ac justo.</p>
+        </div>
+        <!-- // Delivery Tab END -->
+        
+        <!-- Reviews Tab -->
+        <div class="tab-pane active" id="reviewsTab">
+        
+          <!-- Media item -->
+          <div class="media">
+            <img class="media-object pull-left thumb" src="theme/images/mrawesome.jpg" alt="">
+            <div class="media-body">
+              <blockquote>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae accumsan mauris. Donec vitae nibh felis, facilisis bibendum sapien. Duis a odio id erat scelerisque fermentum in ut leo. Suspendisse potenti. Nunc semper cursus dui luctus porttitor. Donec facilisis semper magna sit amet ullamcorper. Cras rutrum magna eget risus vulputate congue. Sed sem libero, dignissim sit amet viverra vitae, suscipit sit amet elit. Integer tincidunt risus in metus rhoncus molestie.</p>
+                  <small><a href="#" title="">John Doe</a><cite> | client @ Famous Company</cite></small>
+              </blockquote>
+            </div>
+          </div>
+          <!-- // Media item END -->
+          
+        </div>
+        <!-- // Reviews Tab END -->
+      
+      </div>
+    </div>
+  </div>
+  <!-- // Product reviews & delivery END -->
+  
+</div>
