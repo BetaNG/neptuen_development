@@ -19,12 +19,11 @@ class ClientsDatatable
   def data
     clients.map do |client|
       [
+        client.id,
         link_to(client.name, client),
+        client.types,
         client.grade,
-        client.reg_name_1,
-        client.reg_name_2,
-        client.employee,
-        client.turnover
+        client.terminal
       ]
     end
   end
@@ -51,7 +50,7 @@ class ClientsDatatable
   end
 
   def sort_column
-    columns = %w[name employee turnover]
+    columns = %w[name alias_name]
     columns[params[:iSortCol_0].to_i]
   end
 

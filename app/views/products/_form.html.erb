@@ -1,228 +1,74 @@
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<div class="heading-buttons">
-  <h3>Add product<span> | Online Shop</span></h3>
-  <div class="buttons pull-right">
-    <a href="<%= products_url %>" class="btn btn-default btn-icon glyphicons share"><i></i> Preview</a>
-    <a href="" class="btn btn-primary btn-icon glyphicons ok_2"><i></i> Save</a>
+<div class="block block-themed block-last">
+  <div class="block-title">
+    <h4>General Form Elements &amp; Components</h4>
   </div>
-  <div class="clearfix"></div>
-</div>
-<div class="separator bottom"></div>
-<!-- // Heading END -->
-
-<div class="innerLR">
-
-  <!-- Widget -->
-  <div class="widget widget-tabs">
-  
-    <!-- Widget heading -->
-    <div class="widget-head">
-      <ul>
-        <li class="active"><a href="#productDescriptionTab" data-toggle="tab" class="glyphicons font"><i></i>详细信息</a></li>
-        <li><a href="#productPhotosTab" data-toggle="tab" class="glyphicons picture"><i></i>图片</a></li>
-        <li><a href="#productIntroTab" data-toggle="tab" class="glyphicons adjust_alt"><i></i>产品介绍</a></li>
-        <li><a href="#productPriceTab" data-toggle="tab" class="glyphicons table"><i></i>价格设置</a></li>
-        <li><a href="#productOtherTab" data-toggle="tab" class="glyphicons podium"><i></i>其他</a></li>
-      </ul>
-    </div>
-    <!-- // Widget heading END -->
-    
-    <div class="widget-body">
-      <div class="tab-content">
-      
-        <!-- Description -->
-        <div class="tab-pane active" id="productDescriptionTab">
-        
-          <!-- Row 名称-->
-          <div class="row-fluid">
-            <!-- Column -->
-            <div class="span3">
-              <strong>产品名称</strong>
-              <p class="muted">这里输入产品的全称</p>
-            </div>
-            <!-- // Column END -->
-            
-            <!-- Column -->
-            <div class="span9">
-              <%= f.label :name, "名称" %>
-              <%= f.text_field :name, class: "span6", placeholder: "输入产品名称..." %>
-              <div class="separator"></div>
-            </div>
-            <!-- // Column END -->
-          </div>
-          <!-- // Row END -->
-          
-          <!-- Row 厂家-->
-          <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>生产厂商</strong>
-                <p class="muted">这里输入生产厂商的名称</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :factory, "厂商" %>
-                <%= f.text_field :factory, class: "span6", placeholder: "输入生产厂商的名称..." %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-          <!-- // Row END -->
-
-          <!-- Row 规格-->
-          <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>产品规格</strong>
-                <p class="muted">这里输入产品的详细规格</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :spec, "规格" %>
-                <%= f.text_field :spec, class: "span6", placeholder: "输入产品的规格型号..." %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-          <!-- // Row END -->
-        </div>
-        <!-- // Description END -->
-        
-        <!-- Photos -->
-        <div class="tab-pane" id="productPhotosTab">
-        
-        </div>
-        <!-- // Photos END -->
-        
-        <!-- Attributes -->
-        <div class="tab-pane" id="productIntroTab">
-            <!-- Row -->
-          <div class="row-fluid">
-          
-            <!-- Column -->
-            <div class="span3">
-              <strong>Description</strong>
-              <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <!-- // Column END -->
-            
-            <!-- Column -->
-            <div class="span9">
-              <%= f.label :intro %>
-              <%= f.text_area :intro, class: "wysihtml5", style: "width: 96%", rows: "7" %>
-            </div>
-            <!-- // Column END -->
-            
-          </div>
-          <!-- // Row END -->
-        </div>
-        <!-- // Attributes END -->
-        
-        <!-- Price -->
-        <div class="tab-pane" id="productPriceTab">
-            <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>中标价</strong>
-                <p class="muted">产品中标的价格</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :bid_price, "中标价" %>
-                <%= f.text_field :bid_price, class: "span6" %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-
-          <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>回款价</strong>
-                <p class="muted">产品回款的价格</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :final_price, "回款价" %>
-                <%= f.text_field :final_price, class: "span6" %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-        </div>
-        <!-- // Price END -->
-        
-        <!-- SEO -->
-        <div class="tab-pane" id="productOtherTab">
-            <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>缩写</strong>
-                <p class="muted">产品的缩写</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :shortname, "缩写" %>
-                <%= f.text_field :shortname, class: "span6" %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-
-          <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>缩位码</strong>
-                <p class="muted">产品的缩位码</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :shortcode, "缩位码" %>
-                <%= f.text_field :shortcode, class: "span6" %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-        </div>
-        <!-- // SEO END -->
-        
+  <div class="block-content">
+    <h4 class="sub-header">基本数据</h4>
+    <%= form_for(@product, html: { class: "form-horizontal" }) do |f| %>
+    <div class="form-group">
+      <%= f.label :name, "药品名称", class: "control-label col-md-2" %>
+      <div class="col-md-3">
+        <%= f.text_field :name, class: "form-control" %>
+        <span class="help-block">填写药品的完整名称</span>
       </div>
     </div>
-  </div>
-  <!-- // Widget END -->
-  
-  <!-- Bottom buttons -->
-  <div class="heading-buttons">
-    <div class="buttons pull-right" style="margin: 0;">
-      <a href="" class="btn btn-default btn-icon glyphicons share"><i></i> Preview</a>
-      <%= f.submit %>
-      <a href="" class="btn btn-primary btn-icon glyphicons ok_2"><i></i> Save</a>
+    <div class="form-group">
+      <%= f.label :factory, "生产厂家", class: "control-label col-md-2" %>
+      <div class="col-md-3">
+       <%= f.text_field :factory, class: "form-control" %>
+        <span class="help-block">生产厂家的全称</span>
+      </div>
     </div>
-    <div class="clearfix"></div>
+    <div class="form-group">
+      <%= f.label :spec, "规格", class: "control-label col-md-2" %>
+      <div class="col-md-3">
+       <%= f.text_field :spec, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :shortname, "助记", class: "control-label col-md-2" %>
+      <div class="col-md-3">
+        <%= f.text_field :shortname, class: "form-control", placeholder: "助记名称..." %>
+      </div>
+      <div class="col-md-3">
+        <%= f.text_field :shortcode, class: "form-control", placeholder: "助记代码..." %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :bid_price, "价格", class: "control-label col-md-2" %>
+      <div class="col-md-3">
+        <%= f.text_field :bid_price, class: "form-control", placeholder: "结算价..." %>
+      </div>
+      <div class="col-md-3">
+        <%= f.text_field :final_price, class: "form-control", placeholder: "挂网价..." %>
+      </div>
+    </div>
+    <div class="form-group">
+     <%= f.label :intro, "药品简介", class: "control-label col-md-2" %>
+      <div class="col-md-6">
+        <%= f.text_area :intro, class: "form-control", size: "6x6", placeholder: "..." %>
+      </div>
+    </div>
+    <div class="form-group form-actions">
+      <div class="col-md-10 col-md-offset-2">
+        <button type="reset" class="btn btn-danger"><i class="icon-repeat"></i> 重置</button>
+        <button type="submit" class="btn btn-success"><i class="icon-ok"></i> 提交</button>
+      </div>
+    </div>
+    <% end %>
+    <h4 class="sub-header">上传模板数据</h4>
+    <%= form_tag import_products_path, multipart: true, class: "form-horizontal" do %>
+    <div class="form-group">
+      <label class="control-label col-md-2" for="file">目标数据模板</label>
+      <div class="col-md-4">
+        <%= file_field_tag :file, class: "form-control" %>
+      </div>
+    </div>  
+    <div class="form-group form-actions">
+      <div class="col-md-10 col-md-offset-2">
+        <button type="submit" class="btn btn-success"><i class="icon-cloud-upload"></i> 上传</button>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <!-- // Bottom buttons END -->
 </div>
-<% end %>

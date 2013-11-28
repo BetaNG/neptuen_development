@@ -33,16 +33,16 @@
                             <nav id="primary-nav">
                                 <ul>
                                     <li>
-                                        <a href="index.php" class=" active"><i class="glyphicon-display"></i>Dashboard</a>
+                                        <a href="<%= root_url %>"><i class="glyphicon-display"></i>Dashboard</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="menu-link"><i class="glyphicon-vector_path_circle"></i>User Interface</a>
+                                        <a href="#" class="menu-link"><i class="glyphicon-vector_path_circle"></i>客户档案</a>
                                         <ul>
                                             <li>
-                                                <a href="page_ui_blocks.php">Blocks</a>
+                                                <%= link_to "终端列表", clients_url %>
                                             </li>
                                             <li>
-                                                <a href="page_ui_grid.php">Grid</a>
+                                                <%= link_to "新建终端", new_client_url %>
                                             </li>
                                             <li>
                                                 <a href="page_ui_typography.php">Typography</a>
@@ -88,7 +88,7 @@
                                                 <%= link_to "概况", products_url %>
                                             </li>
                                             <li>
-                                                <a href="page_forms_layouts_styles.php">Layouts &amp; Styles</a>
+                                                <%= link_to "新增品种", new_product_url %>
                                             </li>
                                             <li>
                                                 <a href="page_forms_pickers_grid.php">Pickers &amp; Grid</a>

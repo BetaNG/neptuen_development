@@ -4,10 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    respond_to do |format|
-      format.html
-      format.json { render json: ProductsDatatable.new(view_context) }
-    end
+    @products = Product.all
   end
 
   # GET /products/1
@@ -64,7 +61,19 @@ class ProductsController < ApplicationController
     end
   end
 
+  def import
+    Product.import(params[:file])
+    redirect_to products_url, notice: "Products imported."
+  end
+
+  def export
+    respond_to do |format|
+      format.xls { send_data @products.to_csv(col_sep: "\t") }
+    end
+  end
+
   private
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])

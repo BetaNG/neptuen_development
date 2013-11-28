@@ -1,0 +1,69 @@
+<h1>Listing contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Duty</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>Birthdate</th>
+      <th>Address</th>
+      <th>Mobile</th>
+      <th>Tel</th>
+      <th>Email</th>
+      <th>Tencent</th>
+      <th>Idcard</th>
+      <th>Hobby</th>
+      <th>Nation</th>
+      <th>Marital</th>
+      <th>Blood</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Zodiac</th>
+      <th>School</th>
+      <th>Science</th>
+      <th>Note</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.department %></td>
+        <td><%= contact.duty %></td>
+        <td><%= contact.age %></td>
+        <td><%= contact.sex %></td>
+        <td><%= contact.birthdate %></td>
+        <td><%= contact.address %></td>
+        <td><%= contact.mobile %></td>
+        <td><%= contact.tel %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.tencent %></td>
+        <td><%= contact.idcard %></td>
+        <td><%= contact.hobby %></td>
+        <td><%= contact.nation %></td>
+        <td><%= contact.marital %></td>
+        <td><%= contact.blood %></td>
+        <td><%= contact.height %></td>
+        <td><%= contact.weight %></td>
+        <td><%= contact.zodiac %></td>
+        <td><%= contact.school %></td>
+        <td><%= contact.science %></td>
+        <td><%= contact.note %></td>
+        <td><%= link_to 'Show', contact %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path %>

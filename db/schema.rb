@@ -11,29 +11,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130629150853) do
+ActiveRecord::Schema.define(version: 20131128145950) do
 
   create_table "clients", force: true do |t|
-    t.string   "name",                                null: false
-    t.string   "reg_name_1"
-    t.string   "reg_name_2"
+    t.string   "name",                   null: false
+    t.string   "types"
     t.string   "grade"
-    t.string   "tel"
-    t.string   "website"
+    t.string   "terminal"
+    t.integer  "bed",        default: 0
+    t.integer  "staff",      default: 0
     t.string   "address"
-    t.integer  "employee"
-    t.decimal  "turnover",   precision: 10, scale: 0
-    t.text     "intro"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "clients", ["name"], name: "index_clients_on_name", unique: true, using: :btree
 
-  create_table "products", force: true do |t|
+  create_table "contacts", force: true do |t|
     t.string   "name"
-    t.string   "shortname"
-    t.string   "shortcode"
+    t.string   "department"
+    t.string   "duty"
+    t.integer  "age"
+    t.string   "sex"
+    t.date     "birthdate"
+    t.string   "address"
+    t.string   "mobile"
+    t.string   "tel"
+    t.string   "email"
+    t.string   "tencent"
+    t.string   "idcard"
+    t.string   "hobby"
+    t.string   "nation"
+    t.boolean  "marital"
+    t.string   "blood"
+    t.integer  "height"
+    t.integer  "weight"
+    t.string   "zodiac"
+    t.string   "school"
+    t.string   "science"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contacts", ["name"], name: "index_contacts_on_name", using: :btree
+
+  create_table "products", force: true do |t|
+    t.string   "name",                                null: false
+    t.string   "shortname",                           null: false
+    t.string   "shortcode",                           null: false
     t.decimal  "bid_price",   precision: 8, scale: 2
     t.decimal  "final_price", precision: 8, scale: 2
     t.text     "intro"
@@ -75,5 +101,6 @@ ActiveRecord::Schema.define(version: 20130629150853) do
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

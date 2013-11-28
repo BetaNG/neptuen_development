@@ -1,141 +1,16 @@
-<!-- Heading -->
-<div class="heading-buttons">
-  <h3>终端列表<span> | 备案 </span></h3>
-  <div class="buttons pull-right">
-    <a href="<%= new_client_url %>" class="btn btn-primary btn-icon glyphicons circle_plus"><i></i> 新加备案</a>
-  </div>
-  <div class="clearfix"></div>
-</div>
-<div class="separator bottom"></div>
-<!-- // Heading END -->
-
-<div class="innerLR">
-
-  <!-- Row -->
-  <div class="row-fluid">
-  
-    <!-- Column -->
-    <div class="span4">
-    
-      <!-- Widget -->
-      <div class="widget">
-        
-        <!-- Widget heading -->
-        <div class="widget-head">
-          <h4 class="heading">Last order</h4>
-          <a href="" class="details pull-right">view all</a>
-        </div>
-        <!-- // Widget heading END -->
-        
-        <div class="widget-body list clients">
-          <ul>
-            <li>
-              <span class="img">photo</span>
-              <span class="title">10 items<br/><strong>&euro;5,900</strong></span>
-              <span class="count"></span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- // Widget END -->
-      
-    </div>
-    <!-- // Column END -->
-    
-    <!-- Column -->
-    <div class="span4">
-    
-      <!-- Widget -->
-      <div class="widget">
-      
-        <!-- Widget heading -->
-        <div class="widget-head">
-          <h4 class="heading">Best seller</h4>
-          <a href="" class="details pull-right">view all</a>
-        </div>
-        <!-- // Widget heading END -->
-        
-        <div class="widget-body list clients">
-          <ul>
-            <li>
-              <span class="img">photo</span>
-              <span class="title">Product name<br/><strong>&euro;2,900</strong></span>
-              <span class="count"></span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- // Widget END -->
-      
-    </div>
-    <!-- // Column END -->
-    
-    <!-- Column -->
-    <div class="span4">
-    
-      <!-- Widget -->
-      <div class="widget">
-      
-        <!-- Widget heading -->
-        <div class="widget-head">
-          <h4 class="heading">Promotion</h4>
-          <a href="" class="details pull-right">view all</a>
-        </div>
-        <!-- // Widget heading END -->
-        
-        <div class="widget-body list clients">
-          <ul>
-            <li>
-              <span class="img">photo</span>
-              <span class="title">Product name<br/><strong>&euro;1,800</strong></span>
-              <span class="count"></span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- // Widget END -->
-      
-    </div>
-    <!-- // Column END -->
-    
-  </div>
-  <!-- // Row END -->
-
-  <!-- Widget -->
-  <div class="widget">
-    
-    <!-- Widget heading -->
-    <div class="widget-head">
-      <h4 class="heading">Data Table</h4>
-    </div>
-    <!-- // Widget heading END -->
-    
-    <div class="widget-body">
-    
-      <!-- Table -->
-      <table class="dynamicTable table table-striped table-bordered table-condensed" data-source="<%= clients_url(format: "json") %>">
-      
-        <!-- Table heading -->
-        <thead>
-          <tr>
-            <th>终端名称</th>
-            <th>终端等级</th>
-            <th>备案名称一</th>
-            <th>备案名称二</th>
-            <th>员工人数</th>
-            <th>年均收入(万元)</th>
-          </tr>
-        </thead>
-        <!-- // Table heading END -->
-        
-        <!-- Table body -->
-        <tbody></tbody>
-        <!-- // Table body END -->
-        
-      </table>
-      <!-- // Table END -->
-      
-    </div>
-  </div>
-  <!-- // Widget END -->
+<% provide(:page_title, page_title("glyphicon-shopping_bag","终端列表","这里可以查询所有终端客户信息")) %>
+<div class="block-section">
+	<table class="ddatatabless table table-bordered table-hover" data-source="<%= clients_url(format: "json") %>">
+		<thead>
+			<tr>
+				<th class="text-center hidden-xs hidden-sm">#</th>
+				<th><i class="icon-user"></i> 终端名称</th>
+				<th> 终端类型</th>
+				<th> 终端等级</th>
+				<th> 所属终端</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
 </div>

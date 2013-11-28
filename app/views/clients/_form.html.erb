@@ -1,240 +1,70 @@
-<%= form_for(@client) do |f| %>
-  <% if @client.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
-
-      <ul>
-      <% @client.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<div class="heading-buttons">
-  <h3>Add 终端 </h3>
-  <div class="buttons pull-right">
-    <a href="<%= clients_url %>" class="btn btn-default btn-icon glyphicons share"><i></i> Preview</a>
-    <a href="" class="btn btn-primary btn-icon glyphicons ok_2"><i></i> Save</a>
+<div class="block block-themed block-last">
+  <div class="block-title">
+    <h4>General Form Elements &amp; Components</h4>
   </div>
-  <div class="clearfix"></div>
-</div>
-<div class="separator bottom"></div>
-<!-- // Heading END -->
-
-<div class="innerLR">
-
-  <!-- Widget -->
-  <div class="widget widget-tabs">
-  
-    <!-- Widget heading -->
-    <div class="widget-head">
-      <ul>
-        <li class="active"><a href="#clientDescriptionTab" data-toggle="tab" class="glyphicons font"><i></i>基本信息</a></li>
-        <li><a href="#clientRegTab" data-toggle="tab" class="glyphicons picture"><i></i>其他信息</a></li>
-        <li><a href="#clientIntroTab" data-toggle="tab" class="glyphicons adjust_alt"><i></i>产品介绍</a></li>
-      </ul>
-    </div>
-    <!-- // Widget heading END -->
-    
-    <div class="widget-body">
-      <div class="tab-content">
-      
-        <!-- Description -->
-        <div class="tab-pane active" id="clientDescriptionTab">
-        
-          <!-- Row 名称-->
-          <div class="row-fluid">
-            <!-- Column -->
-            <div class="span3">
-              <strong>终端名称</strong>
-              <p class="muted">这里输入终端注册的全称</p>
-            </div>
-            <!-- // Column END -->
-            
-            <!-- Column -->
-            <div class="span9">
-              <%= f.label :name, "名称" %>
-              <%= f.text_field :name, class: "span6", placeholder: "输入终端名称..." %>
-              <div class="separator"></div>
-            </div>
-            <!-- // Column END -->
-          </div>
-          <!-- // Row END -->
-          
-          <!-- Row 厂家-->
-          <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>单位地址</strong>
-                <p class="muted">这里输入终端单位的详细地址,以便邮件往来</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :address, "单位地址" %>
-                <%= f.text_field :address, class: "span6", placeholder: "输入终端工作单位的详细地址..." %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-          <!-- // Row END -->
-
-          <!-- Row 规格-->
-          <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>联系电话</strong>
-                <p class="muted">这里输入终端的单位电话</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :tel, "联系电话" %>
-                <%= f.text_field :tel, class: "span6", placeholder: "输入终端的联系电话..." %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-          <!-- // Row END -->
-
-          <!-- Row 规格-->
-          <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>终端网站</strong>
-                <p class="muted">这里输入终端在线的网站地址</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :website, "终端网站" %>
-                <%= f.text_field :website, class: "span6", placeholder: "输入终端在线的网站地址..." %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-          <!-- // Row END -->
-        </div>
-        <!-- // Description END -->
-        
-        <!-- Photos -->
-        <div class="tab-pane" id="clientRegTab">
-          <!-- Row 规格-->
-          <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>员工人数</strong>
-                <p class="muted">这里输入终端的员工人数</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :employee, "员工人数" %>
-                <%= f.text_field :employee, class: "span6", placeholder: "输入终端的员工人数..." %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-          <!-- // Row END -->
-          <!-- Row 规格-->
-          <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>年收入(万)元</strong>
-                <p class="muted">这里输入终端的年均收入</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :turnover, "年均收入" %>
-                <%= f.text_field :turnover, class: "span6", placeholder: "这里输入终端的年均收入..." %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-          <!-- // Row END -->
-          <!-- Row 规格-->
-          <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>备案名称一</strong>
-                <p class="muted">这里输入终端的备案名称</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :reg_name_1, "备案名称一" %>
-                <%= f.text_field :reg_name_1, class: "span6", placeholder: "这里输入终端的备案名称..." %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-          <!-- // Row END -->
-          <!-- Row 规格-->
-          <div class="row-fluid">
-            <!-- Column -->
-              <div class="span3">
-                <strong>备案名称二</strong>
-                <p class="muted">这里输入终端的备案名称</p>
-              </div>
-              <!-- // Column END -->
-              
-              <!-- Column -->
-              <div class="span9">
-                <%= f.label :reg_name_2, "备案名称二" %>
-                <%= f.text_field :reg_name_2, class: "span6", placeholder: "这里输入终端的备案名称..." %>
-                <div class="separator"></div>
-              </div>
-              <!-- // Column END -->
-          </div>
-          <!-- // Row END -->
-        </div>
-        <!-- // Photos END -->
-        
-        <!-- Attributes -->
-        <div class="tab-pane" id="clientIntroTab">
-            <!-- Row -->
-          <div class="row-fluid">
-          
-            <!-- Column -->
-            <div class="span3">
-              <strong>Description</strong>
-              <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <!-- // Column END -->
-            
-            <!-- Column -->
-            <div class="span9">
-              <%= f.label :intro %>
-              <%= f.text_area :intro, class: "wysihtml5", style: "width: 96%", rows: "7" %>
-            </div>
-            <!-- // Column END -->
-            
-          </div>
-          <!-- // Row END -->
-        </div>
-        <!-- // Attributes END -->
-
+  <div class="block-content">
+    <h4 class="sub-header">基本数据</h4>
+    <%= form_for(@client, html: { class: "form-horizontal" }) do |f| %>
+    <div class="form-group">
+      <%= f.label :name, "名称", class: "control-label col-md-2" %>
+      <div class="col-md-6">
+        <%= f.text_field :name, class: "form-control" %>
+        <span class="help-block">终端的备案名称("XX省XX市XX")</span>
       </div>
     </div>
-  </div>
-  <!-- // Widget END -->
-  
-  <!-- Bottom buttons -->
-  <div class="heading-buttons">
-    <div class="buttons pull-right" style="margin: 0;">
-      <a href="" class="btn btn-default btn-icon glyphicons share"><i></i> Preview</a>
-      <%= f.submit %>
-      <a href="" class="btn btn-primary btn-icon glyphicons ok_2"><i></i> Save</a>
+    <div class="form-group">
+      <%= f.label :types, "分类", class: "control-label col-md-2" %>
+      <div class="col-md-2">
+       <%= f.select :types, Client::Types, {include_blank: true}, {class: "form-control"} %>
+       <span class="help-block">终端类型</span>
+      </div>
+      <div class="col-md-2">
+       <%= f.select :grade, Client::Grade, {include_blank: true}, {class: "form-control"} %>
+       <span class="help-block">终端等级</span>
+      </div>
+      <div class="col-md-2">
+       <%= f.select :terminal, Client::Terminal, {include_blank: true}, {class: "form-control"} %>
+       <span class="help-block">所属终端</span>
+      </div>
     </div>
-    <div class="clearfix"></div>
+    <div class="form-group">
+      <%= f.label :bed, "数据", class: "control-label col-md-2" %>
+      <div class="col-md-3">
+       <%= f.text_field :bed, class: "form-control" %>
+       <span class="help-block">床位数</span>
+      </div>
+      <div class="col-md-3">
+       <%= f.text_field :staff, class: "form-control" %>
+       <span class="help-block">员工数</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :address, "地址", class: "control-label col-md-2" %>
+      <div class="col-md-6">
+        <%= f.text_field :address, class: "form-control" %>
+        <span class="help-block">终端的详细地址("XX省XX市XX街道XX路XX号")</span>
+      </div>
+    </div>
+    <div class="form-group form-actions">
+      <div class="col-md-10 col-md-offset-2">
+        <button type="reset" class="btn btn-danger"><i class="icon-repeat"></i> 重置</button>
+        <button type="submit" class="btn btn-success"><i class="icon-ok"></i> 提交</button>
+      </div>
+    </div>
+    <% end %>
+    <h4 class="sub-header">上传模板数据</h4>
+    <%= form_tag import_products_path, multipart: true, class: "form-horizontal" do %>
+    <div class="form-group">
+      <label class="control-label col-md-2" for="file">目标数据模板</label>
+      <div class="col-md-4">
+        <%= file_field_tag :file, class: "form-control" %>
+      </div>
+    </div>  
+    <div class="form-group form-actions">
+      <div class="col-md-10 col-md-offset-2">
+        <button type="submit" class="btn btn-success"><i class="icon-cloud-upload"></i> 上传</button>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <!-- // Bottom buttons END -->
 </div>
-<% end %>

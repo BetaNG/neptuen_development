@@ -22,99 +22,19 @@
         <div id="header-nav-section" class="col-sm-4 col-xs-12 clearfix">
             <ul class="navbar-nav-custom pull-right">
                 <li class="dropdown dropdown-theme-options">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Theme Options</a>
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon-user"></i> <%= current_user[:realname] || current_user[:username] %>
+                    </a>
                     <ul class="dropdown-menu pull-right">
                         <li class="theme-extra visible-md visible-lg">
                             <label for="theme-page-full">
-                                <input type="checkbox" id="theme-page-full" name="theme-page-full" class="input-themed">
-                                Full width page
+                            <input type="checkbox" id="theme-page-full" name="theme-page-full" class="input-themed">
+                            Full width page
                             </label>
                         </li>
                         <li class="divider visible-md visible-lg"></li>
-                        <li class="theme-extra visible-md visible-lg">
-                            <label for="theme-sidebar-sticky">
-                                <input type="checkbox" id="theme-sidebar-sticky" name="theme-sidebar-sticky" class="input-themed">
-                                Sticky Sidebar
-                            </label>
-                        </li>
-                        <li class="divider visible-md visible-lg"></li>
-                        <li class="theme-extra">
-                            <label for="theme-header-top">
-                                <input type="checkbox" id="theme-header-top" name="theme-header-top" class="input-themed">
-                                Top fixed header
-                            </label>
-                            <label for="theme-header-bottom">
-                                <input type="checkbox" id="theme-header-bottom" name="theme-header-bottom" class="input-themed">
-                                Bottom fixed header
-                            </label>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <ul class="theme-colors clearfix">
-                                <li class="active">
-                                    <a href="javascript:void(0)" class="img-circle themed-background-default themed-border-default" data-theme="default" data-toggle="tooltip" title="Default"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-amethyst themed-border-amethyst" data-theme="../assets/themes/amethyst.css" data-toggle="tooltip" title="Amethyst"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-army themed-border-army" data-theme="/assets/themes/army.css" data-toggle="tooltip" title="Army"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-asphalt themed-border-asphalt" data-theme="/assets/themes/asphalt.css" data-toggle="tooltip" title="Asphalt"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-autumn themed-border-autumn" data-theme="/assets/themes/autumn.css" data-toggle="tooltip" title="Autumn"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-cherry themed-border-cherry" data-theme="/assets/themes/cherry.css" data-toggle="tooltip" title="Cherry"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-city themed-border-city" data-theme="/assets/themes/city.css" data-toggle="tooltip" title="City"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-dawn themed-border-dawn" data-theme="/assets/themes/dawn.css" data-toggle="tooltip" title="Dawn"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-deepsea themed-border-deepsea" data-theme="/assets/themes/deepsea.css" data-toggle="tooltip" title="Deepsea"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-diamond themed-border-diamond" data-theme="/assets/themes/diamond.css" data-toggle="tooltip" title="Diamond"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-fire themed-border-fire" data-theme="/assets/themes/fire.css" data-toggle="tooltip" title="Fire"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-grass themed-border-grass" data-theme="/assets/themes/grass.css" data-toggle="tooltip" title="Grass"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-leaf themed-border-leaf" data-theme="/assets/themes/leaf.css" data-toggle="tooltip" title="Leaf"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-night themed-border-night" data-theme="/assets/themes/night.css" data-toggle="tooltip" title="Night"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-ocean themed-border-ocean" data-theme="/assets/themes/ocean.css" data-toggle="tooltip" title="Ocean"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-oil themed-border-oil" data-theme="/assets/themes/oil.css" data-toggle="tooltip" title="Oil"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-stone themed-border-stone" data-theme="/assets/themes/stone.css" data-toggle="tooltip" title="Stone"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-sun themed-border-sun" data-theme="/assets/themes/sun.css" data-toggle="tooltip" title="Sun"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-tulip themed-border-tulip" data-theme="/assets/themes/tulip.css" data-toggle="tooltip" title="Tulip"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="img-circle themed-background-wood themed-border-wood" data-theme="/assets/themes/wood.css" data-toggle="tooltip" title="Wood"></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                    </ul>    
+                </li>    
                 <li class="divider-vertical"></li>
                 <li class="dropdown dropdown-notifications">
                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">

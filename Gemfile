@@ -37,6 +37,7 @@ gem 'jquery-rails'
 gem "cancan"
 gem "thin"
 gem 'devise', '~> 3.0.0.rc'
+gem 'roo'
 gem "will_paginate"
 
 # API
