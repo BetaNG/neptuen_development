@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20131128145950) do
   create_table "contacts", force: true do |t|
     t.string   "name"
     t.string   "department"
+    t.integer  "client_id"
     t.string   "duty"
-    t.integer  "age"
     t.string   "sex"
     t.date     "birthdate"
     t.string   "address"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20131128145950) do
     t.datetime "updated_at"
   end
 
+  add_index "contacts", ["client_id"], name: "index_contacts_on_client_id", using: :btree
   add_index "contacts", ["name"], name: "index_contacts_on_name", using: :btree
 
   create_table "products", force: true do |t|

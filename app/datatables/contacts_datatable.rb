@@ -1,5 +1,5 @@
 # coding: utf-8
-class ClientsDatatable
+class ContactsDatatable
   delegate :params, :h, :link_to, :number_to_currency, to: :@view
   def initialize(view)
     @view = view
@@ -8,8 +8,8 @@ class ClientsDatatable
   def as_json(options = {})
     {
       sEcho: params[:sEcho].to_i,
-      iTotalRecords: Client.count,
-      iTotalDisplayRecords: clients.total_entries,
+      iTotalRecords: Contact.count,
+      iTotalDisplayRecords: contacts.total_entries,
       aaData: data
     }
   end
@@ -17,27 +17,28 @@ class ClientsDatatable
   private
 
   def data
-    clients.map do |client|
+    contacts.map do |contact|
       [
-        link_to(client.name, client),
-        client.types,
-        client.grade,
-        client.terminal
+        link_to(contact.name, contact),
+        contact.client.name,
+        contact.department,
+        contact.duty,
+        contact.mobile
       ]
     end
   end
 
-  def clients
-    @clients ||= fetch_clients
+  def contacts
+    @contacts ||= fetch_contacts
   end
 
-  def fetch_clients
-    clients = Client.order("#{sort_column} #{sort_direction}")
-    clients = clients.page(page).per_page(per_page)
+  def fetch_contacts
+    contacts = Contact.order("#{sort_column} #{sort_direction}")
+    contacts = contacts.page(page).per_page(per_page)
     if params[:sSearch].present?
-      clients = clients.where("name like :search", search: "%#{params[:sSearch]}%")
+      contacts = contacts.where("name like :search", search: "%#{params[:sSearch]}%")
     end
-    clients
+    contacts
   end
 
   def page

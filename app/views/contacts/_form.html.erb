@@ -1,105 +1,146 @@
-<%= form_for(@contact) do |f| %>
-  <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-
-      <ul>
-      <% @contact.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="block block-themed block-last">
+  <div class="block-title">
+    <h4>General Form Elements &amp; Components</h4>
+  </div>
+  <div class="block-content">
+    <h4 class="sub-header">基本数据</h4>
+    <%= form_for(@contact, html: { class: "form-horizontal" }) do |f| %>
+    <div class="form-group">
+      <%= f.label :name, "资料", class: "control-label col-md-2" %>
+      <div class="col-md-2">
+        <%= f.text_field :name, class: "form-control" %>
+        <span class="help-block">姓名</span>
+      </div>
+      <div class="col-md-2">
+        <%= f.select :sex, ["男","女"], {include_blank: true}, {class: "form-control"} %>
+        <span class="help-block">性别</span>
+      </div>
+      <div class="col-md-2">
+        <%= f.date_field :birthdate, class: "form-control" %>
+        <span class="help-block">出生日期</span>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <div class="form-group">
+      <%= f.label :department, "工作信息", class: "control-label col-md-2" %>
+      <div class="col-md-3">
+        <%= f.select :client_id, Client.all.map{ |c| [c.name, c.id] }, {include_blank: true}, {class: "form-control"} %>
+        <span class="help-block">所属终端</span>
+      </div>
+      <div class="col-md-2">
+        <%= f.text_field :department, class: "form-control" %>
+        <span class="help-block">所属部门</span>
+      </div>
+      <div class="col-md-2">
+        <%= f.text_field :duty, class: "form-control" %>
+        <span class="help-block">职务</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :mobile, "联系方式", class: "control-label col-md-2" %>
+      <div class="col-md-2">
+        <%= f.text_field :mobile, class: "form-control" %>
+        <span class="help-block">手机</span>
+      </div>
+      <div class="col-md-2">
+        <%= f.text_field :tel, class: "form-control" %>
+        <span class="help-block">座机</span>
+      </div>
+      <div class="col-md-2">
+        <%= f.email_field :email, class: "form-control" %>
+        <span class="help-block">邮箱地址</span>
+      </div>
+      <div class="col-md-2">
+        <%= f.text_field :tencent, class: "form-control" %>
+        <span class="help-block">QQ</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :address, "地址", class: "control-label col-md-2" %>
+      <div class="col-md-6">
+        <%= f.text_field :address, class: "form-control" %>
+        <span class="help-block">终端的详细地址("XX省XX市XX街道XX路XX号")</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :idcard, "身份信息", class: "control-label col-md-2" %>
+      <div class="col-md-3">
+        <%= f.text_field :idcard, class: "form-control" %>
+        <span class="help-block">身份证号码</span>
+      </div>
+      <div class="col-md-2">
+        <%= f.text_field :nation, class: "form-control" %>
+        <span class="help-block">籍贯</span>
+      </div>
+      <div class="col-md-2">
+        <%= f.select :marital, ["未婚","已婚","离异"], {include_blank: true}, {class: "form-control"} %>
+        <span class="help-block">婚姻状况</span>
+      </div>
+      <div class="col-md-1">
+        <%= f.select :zodiac, ["鼠","牛","虎","兔","龙","蛇","马","羊","猴","鸡","狗","猪"], {include_blank: true}, {class: "form-control"} %>
+        <span class="help-block">生肖</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :hobby, "生活", class: "control-label col-md-2" %>
+      <div class="col-md-3">
+        <%= f.text_field :hobby, class: "form-control" %>
+        <span class="help-block">兴趣爱好(","分割)</span>
+      </div>
+      <div class="col-md-2">
+        <%= f.select :height, (140..200) , {include_blank: true}, {class: "form-control"} %>
+        <span class="help-block">身高(cm)</span>
+      </div>
+      <div class="col-md-2">
+        <%= f.select :weight, (40..100) , {include_blank: true}, {class: "form-control"} %>
+        <span class="help-block">体重(kg)</span>
+      </div>
+      <div class="col-md-1">
+        <%= f.select :blood, ["A","B","O","AB","其他"], {include_blank: true}, {class: "form-control"} %>
+        <span class="help-block">血型</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :school, "学术", class: "control-label col-md-2" %>
+      <div class="col-md-3">
+        <%= f.text_field :school, class: "form-control" %>
+        <span class="help-block">毕业学校</span>
+      </div>
+      <div class="col-md-3">
+        <%= f.text_field :science, class: "form-control" %>
+        <span class="help-block">学术头衔</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :note, "备注说明", class: "control-label col-md-2" %>
+      <div class="col-md-6">
+        <%= f.text_field :note, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group form-actions">
+      <div class="col-md-10 col-md-offset-2">
+        <button type="reset" class="btn btn-danger"><i class="icon-repeat"></i> 重置</button>
+        <button type="submit" class="btn btn-success"><i class="icon-ok"></i> 提交</button>
+      </div>
+    </div>
+    <% end %>
+    <% if @contact.new_record?() %>
+    <h4 class="sub-header">上传模板数据</h4>
+    <%= form_tag import_contacts_path, multipart: true, class: "form-horizontal" do %>
+    <div class="form-group">
+      <label class="control-label col-md-2" for="file">目标数据模板</label>
+      <div class="col-md-4">
+        <%= file_field_tag :file, class: "form-control" %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to "模板下载", templete_contacts_url(format: :xls) %>
+      </div>
+    </div>  
+    <div class="form-group form-actions">
+      <div class="col-md-10 col-md-offset-2">
+        <button type="submit" class="btn btn-success"><i class="icon-cloud-upload"></i> 上传</button>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :department %><br>
-    <%= f.text_field :department %>
-  </div>
-  <div class="field">
-    <%= f.label :duty %><br>
-    <%= f.text_field :duty %>
-  </div>
-  <div class="field">
-    <%= f.label :age %><br>
-    <%= f.number_field :age %>
-  </div>
-  <div class="field">
-    <%= f.label :sex %><br>
-    <%= f.text_field :sex %>
-  </div>
-  <div class="field">
-    <%= f.label :birthdate %><br>
-    <%= f.date_select :birthdate %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :mobile %><br>
-    <%= f.text_field :mobile %>
-  </div>
-  <div class="field">
-    <%= f.label :tel %><br>
-    <%= f.text_field :tel %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :tencent %><br>
-    <%= f.text_field :tencent %>
-  </div>
-  <div class="field">
-    <%= f.label :idcard %><br>
-    <%= f.text_field :idcard %>
-  </div>
-  <div class="field">
-    <%= f.label :hobby %><br>
-    <%= f.text_field :hobby %>
-  </div>
-  <div class="field">
-    <%= f.label :nation %><br>
-    <%= f.text_field :nation %>
-  </div>
-  <div class="field">
-    <%= f.label :marital %><br>
-    <%= f.check_box :marital %>
-  </div>
-  <div class="field">
-    <%= f.label :blood %><br>
-    <%= f.text_field :blood %>
-  </div>
-  <div class="field">
-    <%= f.label :height %><br>
-    <%= f.number_field :height %>
-  </div>
-  <div class="field">
-    <%= f.label :weight %><br>
-    <%= f.number_field :weight %>
-  </div>
-  <div class="field">
-    <%= f.label :zodiac %><br>
-    <%= f.text_field :zodiac %>
-  </div>
-  <div class="field">
-    <%= f.label :school %><br>
-    <%= f.text_field :school %>
-  </div>
-  <div class="field">
-    <%= f.label :science %><br>
-    <%= f.text_field :science %>
-  </div>
-  <div class="field">
-    <%= f.label :note %><br>
-    <%= f.text_field :note %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

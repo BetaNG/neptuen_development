@@ -4,7 +4,10 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all
+    respond_to do |format|
+      format.html
+      format.json { render json: ContactsDatatable.new(view_context) }
+    end
   end
 
   # GET /contacts/1
@@ -25,7 +28,6 @@ class ContactsController < ApplicationController
   # POST /contacts.json
   def create
     @contact = Contact.new(contact_params)
-
     respond_to do |format|
       if @contact.save
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
@@ -61,6 +63,14 @@ class ContactsController < ApplicationController
     end
   end
 
+  def import
+    Contact.import(params[:file])
+    redirect_to contacts_url, notice: "Contacts imported."
+  end
+
+  def templete
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
@@ -69,6 +79,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:name, :department, :duty, :age, :sex, :birthdate, :address, :mobile, :tel, :email, :tencent, :idcard, :hobby, :nation, :marital, :blood, :height, :weight, :zodiac, :school, :science, :note)
+      params.require(:contact).permit(:name, :department, :duty, :age, :client_id, :sex, :birthdate, :address, :mobile, :tel, :email, :tencent, :idcard, :hobby, :nation, :marital, :blood, :height, :weight, :zodiac, :school, :science, :note)
     end
 end

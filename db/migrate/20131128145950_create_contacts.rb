@@ -3,8 +3,8 @@ class CreateContacts < ActiveRecord::Migration
     create_table :contacts do |t|
       t.string :name
       t.string :department
+      t.references :client
       t.string :duty
-      t.integer :age
       t.string :sex
       t.date :birthdate
       t.string :address
@@ -27,5 +27,6 @@ class CreateContacts < ActiveRecord::Migration
       t.timestamps
     end
     add_index :contacts, :name
+    add_index :contacts, :client_id
   end
 end

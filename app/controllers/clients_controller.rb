@@ -64,6 +64,11 @@ class ClientsController < ApplicationController
     end
   end
 
+  def import
+    Client.import(params[:file])
+    redirect_to clients_url, notice: "Clients imported."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client

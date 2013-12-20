@@ -1,7 +1,14 @@
 Neptune::Application.routes.draw do
-  resources :contacts
+  resources :contacts do
+    collection do
+      post :import
+      get :templete
+    end
+  end
 
-  resources :clients
+  resources :clients do
+    collection { post :import }
+  end
 
   resources :products do
     collection { post :import }
